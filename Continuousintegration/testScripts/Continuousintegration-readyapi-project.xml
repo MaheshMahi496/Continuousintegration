@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="f42b5ead-19d5-463d-bd7a-c15fc91b62a9" created="2.7.0" activeEnvironment="Default environment" name="Continuousintegration" resourceRoot="" updated="2.7.0 2019-04-30T17:12:05Z" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:RestService" id="bc0b60d6-1b4b-4db0-8982-9f16eddc9963" wadlVersion="http://wadl.dev.java.net/2009/02" name="REST Service 1" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache/>
+    <con:endpoints/>
+    <con:resource name="/" path="/" id="ac5041a5-a428-4b03-974b-354d8488d662">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="GET" id="e39c0272-f46b-4d54-9214-84e895ff5275" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:request name="GET Request" id="9e005d00-4c47-4be1-9977-e29a734540dc" mediaType="application/json">
+          <con:settings/>
+          <con:endpoint>http://devops-demo.us-e1.cloudhub.io</con:endpoint>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:interface xsi:type="con:RestService" id="1a930ef4-3501-4961-ac0b-e7586ac210a1" wadlVersion="http://wadl.dev.java.net/2009/02" name="REST Service 2" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart=""/>
+    <con:endpoints/>
+    <con:resource name="/getData" path="/getData" id="8f54a522-7a83-4571-ba20-c0ae910e44a5">
+      <con:settings/>
+      <con:parameters/>
+      <con:method name="GET" id="0953c929-2f39-486b-b8fe-5350a517be68" method="GET">
+        <con:settings/>
+        <con:parameters/>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/java; charset=UTF-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params/>
+          <con:element>data</con:element>
+        </con:representation>
+        <con:request name="GET Request" id="5951fc68-f23f-406a-8482-8626626705de" mediaType="application/json">
+          <con:settings/>
+          <con:endpoint>http://devops-demo.us-e1.cloudhub.io</con:endpoint>
+          <con:parameters/>
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:testSuite id="d91a4b23-03da-4354-bc2d-7ea5c579b868" name="ContinuousintegrationTestSuite">
+    <con:settings/>
+    <con:savedRecentRuns>1</con:savedRecentRuns>
+    <con:runType>SEQUENTIAL</con:runType>
+    <con:testCase id="a9fae05c-748b-411e-910f-66b9104d748b" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ContinuousintegrationTestCase" searchProperties="true" timeout="0">
+      <con:settings/>
+      <con:savedRecentRuns>1</con:savedRecentRuns>
+      <con:testStep type="properties" name="Properties" id="d32762f4-3187-4fd8-a893-514671ca9991">
+        <con:settings/>
+        <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:properties>
+            <con:property>
+              <con:name>Path</con:name>
+              <con:value>D:\CI\Continuousintegration\testScripts\TestData.xlsx</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datasource" name="DataSource" id="71b258cd-0f2b-4d3f-9cd2-e036befd122c">
+        <con:settings/>
+        <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:dataSource type="Excel">
+            <con:configuration>
+              <file>D:/CI/Continuousintegration/testScripts/TestData.xlsx</file>
+              <worksheet>BMO</worksheet>
+              <cell>A2</cell>
+              <ignoreEmpty>false</ignoreEmpty>
+              <evaluateFormulas>false</evaluateFormulas>
+            </con:configuration>
+          </con:dataSource>
+          <con:shared>true</con:shared>
+          <con:restartShared>true</con:restartShared>
+          <con:property>Response</con:property>
+          <con:property>Result</con:property>
+          <con:property>Status_Code</con:property>
+          <con:completeLastOperation>true</con:completeLastOperation>
+          <con:restartOnRun>true</con:restartOnRun>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="restrequest" name="REST Request" id="10da81bc-93c5-4a85-b1f4-8f50f4aa1fa4">
+        <con:settings/>
+        <con:config service="REST Service 2" resourcePath="/getData" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="REST Request" id="5951fc68-f23f-406a-8482-8626626705de" mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://devops-demo.us-e1.cloudhub.io</con:endpoint>
+            <con:request/>
+            <con:originalUri>http://devops-demo.us-e1.cloudhub.io/getData</con:originalUri>
+            <con:credentials>
+              <con:selectedAuthProfile>Inherit From Parent</con:selectedAuthProfile>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+            <con:parameters/>
+          </con:restRequest>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="groovy" name="Groovy Script" id="91681f0f-c81f-4e11-9a21-581e4841b1e8">
+        <con:settings/>
+        <con:config>
+          <script>import groovy.json.JsonSlurper
+
+def httpValue= testRunner.testCase.testSteps['REST Request'].testRequest.response.getResponseHeaders()
+log.info httpValue
+def status = httpValue["#status#"].toString()
+log.info status
+//Get the status code value from the Input sheet
+def status_Code = context.expand( '${DataSource#Status_Code}' )
+log.infoEnabled
+//Assert actual value to the expected value
+if (status.contains(status_Code))
+{
+return "PASS"
+}
+else
+{
+return "FAIL"
+}</script>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datasink" name="DataSink" id="f3ab4009-b6a2-4380-a116-8c7360520982">
+        <con:settings/>
+        <con:config xsi:type="con:DataSinkStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:dataSink type="Excel">
+            <con:configuration>
+              <file/>
+              <outfile>D:/CI/Continuousintegration/testScripts/TestData.xlsx</outfile>
+              <worksheet>BMO</worksheet>
+              <cell>A2</cell>
+              <evaluateFormulas>false</evaluateFormulas>
+              <append>false</append>
+            </con:configuration>
+          </con:dataSink>
+          <con:properties>
+            <con:property>
+              <con:name>Res</con:name>
+              <con:value>${REST Request#RawResponse}</con:value>
+            </con:property>
+            <con:property>
+              <con:name>Result</con:name>
+              <con:value>${Groovy Script#result}</con:value>
+            </con:property>
+          </con:properties>
+        </con:config>
+      </con:testStep>
+      <con:testStep type="datasourceloop" name="DataSource Loop" id="d02d544d-13c8-4ee3-8410-a7108cdcdc85">
+        <con:settings/>
+        <con:config>
+          <dataSourceStep>DataSource</dataSourceStep>
+          <targetStep>REST Request</targetStep>
+          <discardResults>true</discardResults>
+        </con:config>
+      </con:testStep>
+      <con:properties/>
+      <con:reportParameters/>
+    </con:testCase>
+    <con:properties/>
+    <con:reportParameters/>
+  </con:testSuite>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:requirements/>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:databaseConnectionContainer/>
+  <con:jmsConnectionContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+  <con:reporting>
+    <con:reportTemplates/>
+    <con:xmlTemplates/>
+    <con:xmlTemplates/>
+    <con:parameters/>
+    <con:parameters/>
+  </con:reporting>
+  <con:reporting/>
+  <con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest">
+    <con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
+// This code is often used for adding custom authentication to SoapUI Pro tests
+
+// If hardcoding the token, uncomment and change line 5
+// def token = '4567'
+
+// If your token is parameterized in Project level custom property, uncomment line 8
+// def token = request.parent.testCase.testSuite.project.getProperty('auth_token').getValue()
+
+// To modify all outgoing calls, remove comments from lines 11 to 16
+// def headers = request.requestHeaders
+// if (headers.containsKey('auth_token2') == false) {
+//   headers.put('auth_token2', token)
+//   request.requestHeaders = headers
+// }</con:script>
+  </con:eventHandlers>
+  <con:eventHandlers type="TestRunListener.afterStep" name="TestRunListener.afterStep">
+    <con:script>// Save all test step results into files
+// Change the directory path in line 5 to a location where you want to store details
+// then uncomment lines 5 to 10
+
+// filePath = 'C:\\tempOutputDirectory\\'
+// fos = new FileOutputStream(filePath + testStepResult.testStep.label + '.txt', true)
+// pw = new PrintWriter(fos)
+// testStepResult.writeTo(pw)
+// pw.close()
+// fos.close()</con:script>
+  </con:eventHandlers>
+  <con:authRepository/>
+  <con:tags/>
+</con:soapui-project>
