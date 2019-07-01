@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="f42b5ead-19d5-463d-bd7a-c15fc91b62a9" created="2.7.0" activeEnvironment="Default environment" name="Continuousintegration" resourceRoot="" updated="2.7.0 2019-04-30T17:12:05Z" xmlns:con="http://eviware.com/soapui/config">
+<con:soapui-project id="f42b5ead-19d5-463d-bd7a-c15fc91b62a9" created="2.7.0" activeEnvironment="Default environment" name="Continuousintegration" resourceRoot="" updated="2.7.0 2019-04-30T17:12:05Z" encryptionMode="Not encrypted" xmlns:con="http://eviware.com/soapui/config">
   <con:settings/>
   <con:interface xsi:type="con:RestService" id="bc0b60d6-1b4b-4db0-8982-9f16eddc9963" wadlVersion="http://wadl.dev.java.net/2009/02" name="REST Service 1" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <con:settings/>
@@ -14,6 +14,10 @@
         <con:request name="GET Request" id="9e005d00-4c47-4be1-9977-e29a734540dc" mediaType="application/json">
           <con:settings/>
           <con:endpoint>http://devops-demo.us-e1.cloudhub.io</con:endpoint>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
           <con:parameters/>
         </con:request>
       </con:method>
@@ -38,6 +42,10 @@
         <con:request name="GET Request" id="5951fc68-f23f-406a-8482-8626626705de" mediaType="application/json">
           <con:settings/>
           <con:endpoint>http://devops-demo.us-e1.cloudhub.io</con:endpoint>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
           <con:parameters/>
         </con:request>
       </con:method>
@@ -66,7 +74,7 @@
         <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
           <con:dataSource type="Excel">
             <con:configuration>
-              <file>D:/CI/Continuousintegration/testScripts/TestData.xlsx</file>
+              <file>D:/CI/testScripts/Continuousintegration-readyapi-project.xml</file>
               <worksheet>BMO</worksheet>
               <cell>A2</cell>
               <ignoreEmpty>false</ignoreEmpty>
@@ -130,7 +138,7 @@ return "FAIL"
           <con:dataSink type="Excel">
             <con:configuration>
               <file/>
-              <outfile>D:/CI/Continuousintegration/testScripts/TestData.xlsx</outfile>
+              <outfile>D:/CI/testScripts/Continuousintegration-readyapi-project.xml</outfile>
               <worksheet>BMO</worksheet>
               <cell>A2</cell>
               <evaluateFormulas>false</evaluateFormulas>
