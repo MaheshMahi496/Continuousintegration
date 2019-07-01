@@ -52,16 +52,16 @@ node {
       } else {
             echo "Deployment Started"
             withCredentials([usernamePassword(credentialsId: 'd26ec363-344f-461b-a1aa-cfd53c565995', passwordVariable: 'ANYPOINT_PASSWORD', usernameVariable: 'ANYPOINT_USERNAME')]) {
-                bat "mvn deploy -DmuleDeploy -Denv=$ENVIRONMENT -Danypoint.username=${ANYPOINT_USERNAME} -Danypoint.password=${ANYPOINT_PASSWORD}"
+                //bat "mvn deploy -DmuleDeploy -Denv=$ENVIRONMENT -Danypoint.username=${ANYPOINT_USERNAME} -Danypoint.password=${ANYPOINT_PASSWORD}"
             }
       }
    }
    stage('Function Test Cases execution') {
       // Run the maven build
       if (isUnix()) {
-         SoapUIPro(environment: '', pathToProjectFile: 'C:/Users/mrasakonda/.jenkins/workspace/CTRepository/testScripts/CTDemo-readyapi-project.xml', pathToTestrunner: 'C:/Program Files/SmartBear/ReadyAPI-2.7.0/bin/testrunner.bat', projectPassword: '', testCase: '', testSuite: '')        
+         SoapUIPro(environment: '', pathToProjectFile: 'C:/Users/mrasakonda/.jenkins/workspace/Continuousintegration/testScripts/Continuousintegration-readyapi-project.xml', pathToTestrunner: 'C:/Program Files/SmartBear/ReadyAPI-2.7.0/bin/testrunner.bat', projectPassword: '', testCase: '', testSuite: '')        
       } else {
-         SoapUIPro(environment: '', pathToProjectFile: 'C:/Users/mrasakonda/.jenkins/workspace/CTRepository/testScripts/CTDemo-readyapi-project.xml', pathToTestrunner: 'C:/Program Files/SmartBear/ReadyAPI-2.7.0/bin/testrunner.bat', projectPassword: '', testCase: '', testSuite: '')
+         SoapUIPro(environment: '', pathToProjectFile: 'C:/Users/mrasakonda/.jenkins/workspace/Continuousintegration/testScripts/Continuousintegration-readyapi-project.xml', pathToTestrunner: 'C:/Program Files/SmartBear/ReadyAPI-2.7.0/bin/testrunner.bat', projectPassword: '', testCase: '', testSuite: '')
          
       }
    }
