@@ -82,11 +82,7 @@ if (build.result == Result.SUCCESS) {
 	result_img = "static/e59dfe28/images/32x32/yellow.gif"
 }
 
-if (build.builtOnStr == '') {
-	built_on = 'master'
-} else {
-	built_on = build.builtOnStr
-}
+
 
 def healthIconSize = "16x16"
 def healthReports = project.buildHealthReports
