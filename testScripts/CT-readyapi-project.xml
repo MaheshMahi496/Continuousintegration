@@ -1,36 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="f42b5ead-19d5-463d-bd7a-c15fc91b62a9" created="2.7.0" activeEnvironment="Default environment" name="Continuousintegration" resourceRoot="" updated="2.7.0 2019-04-30T17:12:05Z" encryptionMode="Not encrypted" xmlns:con="http://eviware.com/soapui/config">
+<con:soapui-project id="ca0a5635-83b5-4945-9b24-e6e7a31dd087" created="2.7.0" activeEnvironment="Default environment" name="CT" resourceRoot="" updated="2.7.0 2019-04-30T17:12:05Z" xmlns:con="http://eviware.com/soapui/config">
   <con:settings/>
-  <con:interface xsi:type="con:RestService" id="bc0b60d6-1b4b-4db0-8982-9f16eddc9963" wadlVersion="http://wadl.dev.java.net/2009/02" name="REST Service 1" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <con:interface xsi:type="con:RestService" id="0501e71f-6f83-4e7e-a905-66efbbe941f8" wadlVersion="http://wadl.dev.java.net/2009/02" name="REST Service 1" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <con:settings/>
     <con:definitionCache/>
     <con:endpoints/>
-    <con:resource name="/" path="/" id="ac5041a5-a428-4b03-974b-354d8488d662">
+    <con:resource name="/getData" path="/getData" id="65c87161-b471-4b21-92ab-18c8c2d2e8c2">
       <con:settings/>
       <con:parameters/>
-      <con:method name="GET" id="e39c0272-f46b-4d54-9214-84e895ff5275" method="GET">
-        <con:settings/>
-        <con:parameters/>
-        <con:request name="GET Request" id="9e005d00-4c47-4be1-9977-e29a734540dc" mediaType="application/json">
-          <con:settings/>
-          <con:endpoint>http://devops-demo.us-e1.cloudhub.io</con:endpoint>
-          <con:credentials>
-            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-            <con:authType>No Authorization</con:authType>
-          </con:credentials>
-          <con:parameters/>
-        </con:request>
-      </con:method>
-    </con:resource>
-  </con:interface>
-  <con:interface xsi:type="con:RestService" id="1a930ef4-3501-4961-ac0b-e7586ac210a1" wadlVersion="http://wadl.dev.java.net/2009/02" name="REST Service 2" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <con:settings/>
-    <con:definitionCache type="TEXT" rootPart=""/>
-    <con:endpoints/>
-    <con:resource name="/getData" path="/getData" id="8f54a522-7a83-4571-ba20-c0ae910e44a5">
-      <con:settings/>
-      <con:parameters/>
-      <con:method name="GET" id="0953c929-2f39-486b-b8fe-5350a517be68" method="GET">
+      <con:method name="GET" id="a721a1dd-030d-414d-9422-5a4319a9eea3" method="GET">
         <con:settings/>
         <con:parameters/>
         <con:representation type="RESPONSE">
@@ -39,42 +17,38 @@
           <con:params/>
           <con:element>data</con:element>
         </con:representation>
-        <con:request name="GET Request" id="5951fc68-f23f-406a-8482-8626626705de" mediaType="application/json">
+        <con:request name="GET Request" id="caddc3a1-f89b-4bb2-a6e6-5129dc15603a" mediaType="application/json">
           <con:settings/>
           <con:endpoint>http://devops-demo.us-e1.cloudhub.io</con:endpoint>
-          <con:credentials>
-            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-            <con:authType>No Authorization</con:authType>
-          </con:credentials>
           <con:parameters/>
         </con:request>
       </con:method>
     </con:resource>
   </con:interface>
-  <con:testSuite id="d91a4b23-03da-4354-bc2d-7ea5c579b868" name="ContinuousintegrationTestSuite">
+  <con:testSuite id="ec4dd620-a704-4a76-bf60-e1157556bad1" name="CTTestSuite">
     <con:settings/>
     <con:savedRecentRuns>1</con:savedRecentRuns>
     <con:runType>SEQUENTIAL</con:runType>
-    <con:testCase id="a9fae05c-748b-411e-910f-66b9104d748b" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="ContinuousintegrationTestCase" searchProperties="true" timeout="0">
+    <con:testCase id="319d0dc2-5e31-4e52-8ed3-1eb475dc0bf7" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="CTTestCase" searchProperties="true" timeout="0">
       <con:settings/>
       <con:savedRecentRuns>1</con:savedRecentRuns>
-      <con:testStep type="properties" name="Properties" id="d32762f4-3187-4fd8-a893-514671ca9991">
+      <con:testStep type="properties" name="Properties" id="c67dd1c9-a1ce-4a86-96a6-a989285656fd">
         <con:settings/>
         <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
           <con:properties>
             <con:property>
               <con:name>Path</con:name>
-              <con:value>D:\CI\Continuousintegration\testScripts\TestData.xlsx</con:value>
+              <con:value>D:\CI\testScripts\TestData.xlsx</con:value>
             </con:property>
           </con:properties>
         </con:config>
       </con:testStep>
-      <con:testStep type="datasource" name="DataSource" id="71b258cd-0f2b-4d3f-9cd2-e036befd122c">
+      <con:testStep type="datasource" name="DataSource" id="94d1c102-a6ea-4032-bdaf-21b8a481de1c">
         <con:settings/>
         <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
           <con:dataSource type="Excel">
             <con:configuration>
-              <file>D:/CI/testScripts/Continuousintegration-readyapi-project.xml</file>
+              <file>D:/CI/testScripts/TestData.xlsx</file>
               <worksheet>BMO</worksheet>
               <cell>A2</cell>
               <ignoreEmpty>false</ignoreEmpty>
@@ -85,15 +59,15 @@
           <con:restartShared>true</con:restartShared>
           <con:property>Response</con:property>
           <con:property>Result</con:property>
-          <con:property>Status_Code</con:property>
+          <con:property>StatusCode</con:property>
           <con:completeLastOperation>true</con:completeLastOperation>
           <con:restartOnRun>true</con:restartOnRun>
         </con:config>
       </con:testStep>
-      <con:testStep type="restrequest" name="REST Request" id="10da81bc-93c5-4a85-b1f4-8f50f4aa1fa4">
+      <con:testStep type="restrequest" name="REST Request" id="e5fd2d2f-f0da-4c25-9d6a-cb3a146c4d2d">
         <con:settings/>
-        <con:config service="REST Service 2" resourcePath="/getData" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-          <con:restRequest name="REST Request" id="5951fc68-f23f-406a-8482-8626626705de" mediaType="application/json">
+        <con:config service="REST Service 1" resourcePath="/getData" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          <con:restRequest name="REST Request" id="caddc3a1-f89b-4bb2-a6e6-5129dc15603a" mediaType="application/json">
             <con:settings>
               <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
             </con:settings>
@@ -109,7 +83,7 @@
           </con:restRequest>
         </con:config>
       </con:testStep>
-      <con:testStep type="groovy" name="Groovy Script" id="91681f0f-c81f-4e11-9a21-581e4841b1e8">
+      <con:testStep type="groovy" name="Groovy Script" id="c8fd4a6b-fa9b-4de2-b95b-3cc743bd4e15">
         <con:settings/>
         <con:config>
           <script>import groovy.json.JsonSlurper
@@ -132,13 +106,13 @@ return "FAIL"
 }</script>
         </con:config>
       </con:testStep>
-      <con:testStep type="datasink" name="DataSink" id="f3ab4009-b6a2-4380-a116-8c7360520982">
+      <con:testStep type="datasink" name="DataSink" id="194116dd-df5f-45f3-87e6-5855c3e29a50">
         <con:settings/>
         <con:config xsi:type="con:DataSinkStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
           <con:dataSink type="Excel">
             <con:configuration>
               <file/>
-              <outfile>D:/CI/testScripts/Continuousintegration-readyapi-project.xml</outfile>
+              <outfile>D:/CI/testScripts/TestData.xlsx</outfile>
               <worksheet>BMO</worksheet>
               <cell>A2</cell>
               <evaluateFormulas>false</evaluateFormulas>
@@ -147,7 +121,7 @@ return "FAIL"
           </con:dataSink>
           <con:properties>
             <con:property>
-              <con:name>Res</con:name>
+              <con:name>Response</con:name>
               <con:value>${REST Request#RawResponse}</con:value>
             </con:property>
             <con:property>
@@ -157,7 +131,7 @@ return "FAIL"
           </con:properties>
         </con:config>
       </con:testStep>
-      <con:testStep type="datasourceloop" name="DataSource Loop" id="d02d544d-13c8-4ee3-8410-a7108cdcdc85">
+      <con:testStep type="datasourceloop" name="DataSource Loop" id="c4acc897-5167-4a9f-8885-6842921790c0">
         <con:settings/>
         <con:config>
           <dataSourceStep>DataSource</dataSourceStep>
@@ -172,7 +146,6 @@ return "FAIL"
     <con:reportParameters/>
   </con:testSuite>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:requirements/>
   <con:properties/>
   <con:wssContainer/>
   <con:databaseConnectionContainer/>
