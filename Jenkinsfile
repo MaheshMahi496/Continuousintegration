@@ -103,7 +103,7 @@ node {
 				attachmentsPattern: '**/Project Report.pdf',
                 subject: "Failure: Job '${env.JOB_NAME} ${env.BUILD_NUMBER}'",
                 body: "Check console output at '${env.BUILD_URL}' of '${env.JOB_NAME}'",
-                to: "mahesh.rasakonda@whishworks.com",
+                to: "mahesh.rasakonda@whishworks.com,aparna.deekonda@whishworks.com,naresh.manthrabuddi@whishworks.com",
                 from: "jenkins@whishworks.com"
             )
         }
