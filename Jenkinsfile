@@ -87,7 +87,7 @@ node {
    if (currentBuild.currentResult == 'SUCCESS') {
         stage('Success') {
             echo "Current build status is success::"+currentBuild.currentResult
-			def content = '${SCRIPT, template="jenkins-matrix-email-html.template"}'
+			def content = '${SCRIPT, template="groovy-text.template"}'
             emailext (
 				attachmentsPattern: '*/Project Report.pdf, */TestData.xlsx',
                 subject: "Success: Job '${env.JOB_NAME} ${env.BUILD_NUMBER}'",
