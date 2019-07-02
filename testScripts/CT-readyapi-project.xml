@@ -38,7 +38,7 @@
           <con:properties>
             <con:property>
               <con:name>Path</con:name>
-              <con:value>D:\CI\testScripts\TestData.xlsx</con:value>
+              <con:value>C:\Users\mrasakonda\.jenkins\workspace\Continuousintegration\testScripts\TestData.xlsx</con:value>
             </con:property>
           </con:properties>
         </con:config>
@@ -48,7 +48,7 @@
         <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
           <con:dataSource type="Excel">
             <con:configuration>
-              <file>D:/CI/testScripts/TestData.xlsx</file>
+              <file>C:\Users\mrasakonda\.jenkins\workspace\Continuousintegration\testScripts\TestData.xlsx</file>
               <worksheet>BMO</worksheet>
               <cell>A2</cell>
               <ignoreEmpty>false</ignoreEmpty>
@@ -112,7 +112,7 @@ return "FAIL"
           <con:dataSink type="Excel">
             <con:configuration>
               <file/>
-              <outfile>D:/CI/testScripts/TestData.xlsx</outfile>
+              <outfile>C:\Users\mrasakonda\.jenkins\workspace\Continuousintegration\testScripts\TestData.xlsx</outfile>
               <worksheet>BMO</worksheet>
               <cell>A2</cell>
               <evaluateFormulas>false</evaluateFormulas>
