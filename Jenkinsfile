@@ -52,7 +52,7 @@ node {
       } else {
             echo "Deployment Started"
             withCredentials([usernamePassword(credentialsId: 'd26ec363-344f-461b-a1aa-cfd53c565995', passwordVariable: 'ANYPOINT_PASSWORD', usernameVariable: 'ANYPOINT_USERNAME')]) {
-                bat "mvn deploy -DmuleDeploy -Denv=$ENVIRONMENT -Danypoint.username=${ANYPOINT_USERNAME} -Danypoint.password=${ANYPOINT_PASSWORD}"
+                //bat "mvn deploy -DmuleDeploy -Denv=$ENVIRONMENT -Danypoint.username=${ANYPOINT_USERNAME} -Danypoint.password=${ANYPOINT_PASSWORD}"
             }
       }
    }
@@ -91,7 +91,7 @@ node {
 				attachmentsPattern: '*/Project Report.pdf, */TestData.xlsx',
                 subject: "Success: Job '${env.JOB_NAME} ${env.BUILD_NUMBER}'",
                 body: "Check console output at '${env.BUILD_URL}' of '${env.JOB_NAME}'",
-                to: "mahesh.rasakonda@whishworks.com",
+                to: "mahesh.rasakonda@whishworks.com,aparna.deekonda@whishworks.com,naresh.manthrabuddi@whishworks.com",
                 from: "jenkins@whishworks.com"
             )
         }
