@@ -90,7 +90,7 @@ node {
             emailext (
 				attachmentsPattern: '*/Project Report.pdf, */TestData.xlsx',
                 subject: "Success: Job '${env.JOB_NAME} ${env.BUILD_NUMBER}'",
-                body: content,
+                body: "Check console output at '${env.BUILD_URL}' of '${env.JOB_NAME}'",
                 to: "mahesh.rasakonda@whishworks.com",
                 from: "jenkins@whishworks.com"
             )
