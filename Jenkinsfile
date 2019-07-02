@@ -87,10 +87,11 @@ node {
    if (currentBuild.currentResult == 'SUCCESS') {
         stage('Success') {
             echo "Current build status is success::"+currentBuild.currentResult
+			def content = '${SCRIPT, template="jenkins-matrix-email-html.template"}'
             emailext (
 				attachmentsPattern: '*/Project Report.pdf, */TestData.xlsx',
                 subject: "Success: Job '${env.JOB_NAME} ${env.BUILD_NUMBER}'",
-                body: "Check console output at '${env.BUILD_URL}' of '${env.JOB_NAME}'",
+                body: content,
                 to: "mahesh.rasakonda@whishworks.com,aparna.deekonda@whishworks.com,naresh.manthrabuddi@whishworks.com",
                 from: "jenkins@whishworks.com"
             )
