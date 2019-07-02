@@ -92,7 +92,7 @@ node {
 				attachmentsPattern: '*/Project Report.pdf, */TestData.xlsx',
                 subject: "Success: Job '${env.JOB_NAME} ${env.BUILD_NUMBER}'",
                 body: '''${SCRIPT, template="groovy_html.template"}''',
-                to: "mahesh.rasakonda@whishworks.com,aparna",
+                to: "mahesh.rasakonda@whishworks.com",
                 from: "jenkins@whishworks.com"
             )
         }
