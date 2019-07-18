@@ -52,7 +52,7 @@
         <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
           <con:dataSource type="Excel">
             <con:configuration>
-              <file>C:\Users\mrasakonda\.jenkins\workspace\Continuousintegration\testScripts\TestData.xlsx</file>
+              <file>C:/Users/mrasakonda/.jenkins/workspace/Continuousintegration/testScripts/TestData.xlsx</file>
               <worksheet>BMO</worksheet>
               <cell>A2</cell>
               <ignoreEmpty>false</ignoreEmpty>
@@ -63,7 +63,7 @@
           <con:restartShared>true</con:restartShared>
           <con:property>Response</con:property>
           <con:property>Result</con:property>
-          <con:property>StatusCode</con:property>
+          <con:property>Status_Code</con:property>
           <con:completeLastOperation>true</con:completeLastOperation>
           <con:restartOnRun>true</con:restartOnRun>
         </con:config>
@@ -116,7 +116,7 @@ return "FAIL"
           <con:dataSink type="Excel">
             <con:configuration>
               <file/>
-              <outfile>C:\Users\mrasakonda\.jenkins\workspace\Continuousintegration\testScripts\TestData.xlsx</outfile>
+              <outfile>C:/Users/mrasakonda/.jenkins/workspace/Continuousintegration/testScripts/TestData.xlsx</outfile>
               <worksheet>BMO</worksheet>
               <cell>A2</cell>
               <evaluateFormulas>false</evaluateFormulas>
