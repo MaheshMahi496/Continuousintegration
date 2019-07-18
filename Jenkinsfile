@@ -24,7 +24,7 @@ node {
          sh 'mvn clean'
       } else {
             echo "This is windows machine"
-            //bat 'mvn clean'
+             bat 'mvn clean'
       }
    }
    stage('Unit Testing and packaging') {

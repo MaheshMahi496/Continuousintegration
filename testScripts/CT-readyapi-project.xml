@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="ca0a5635-83b5-4945-9b24-e6e7a31dd087" created="2.7.0" activeEnvironment="Default environment" name="CT" resourceRoot="" updated="2.7.0 2019-04-30T17:12:05Z" xmlns:con="http://eviware.com/soapui/config">
+<con:soapui-project id="ca0a5635-83b5-4945-9b24-e6e7a31dd087" created="2.7.0" activeEnvironment="Default environment" name="CT" resourceRoot="" updated="2.7.0 2019-04-30T17:12:05Z" encryptionMode="Not encrypted" xmlns:con="http://eviware.com/soapui/config">
   <con:settings/>
   <con:interface xsi:type="con:RestService" id="0501e71f-6f83-4e7e-a905-66efbbe941f8" wadlVersion="http://wadl.dev.java.net/2009/02" name="REST Service 1" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <con:settings/>
-    <con:definitionCache/>
+    <con:definitionCache type="TEXT" rootPart=""/>
     <con:endpoints/>
     <con:resource name="/getData" path="/getData" id="65c87161-b471-4b21-92ab-18c8c2d2e8c2">
       <con:settings/>
@@ -20,6 +20,10 @@
         <con:request name="GET Request" id="caddc3a1-f89b-4bb2-a6e6-5129dc15603a" mediaType="application/json">
           <con:settings/>
           <con:endpoint>http://devops-demo.us-e1.cloudhub.io</con:endpoint>
+          <con:credentials>
+            <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
           <con:parameters/>
         </con:request>
       </con:method>
