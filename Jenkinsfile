@@ -24,7 +24,7 @@ node {
          sh 'mvn clean'
       } else {
             echo "This is windows machine"
-             bat 'mvn clean'
+             //bat 'mvn clean'
       }
    }
    stage('Unit Testing and packaging') {
@@ -52,7 +52,7 @@ node {
       } else {
             echo "Deployment Started"
             withCredentials([usernamePassword(credentialsId: 'd26ec363-344f-461b-a1aa-cfd53c565995', passwordVariable: 'ANYPOINT_PASSWORD', usernameVariable: 'ANYPOINT_USERNAME')]) {
-                bat "mvn deploy -DmuleDeploy -Denv=$ENVIRONMENT -Danypoint.username=${ANYPOINT_USERNAME} -Danypoint.password=${ANYPOINT_PASSWORD}"
+                //bat "mvn deploy -DmuleDeploy -Denv=$ENVIRONMENT -Danypoint.username=${ANYPOINT_USERNAME} -Danypoint.password=${ANYPOINT_PASSWORD}"
             }
       }
    }
