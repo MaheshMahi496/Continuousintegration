@@ -59,7 +59,7 @@ node {
    stage('Function Test Cases execution') {
 	def v_workspace = "${env.WORKSPACE}"
 	   echo "Workspace is : ${v_workspace}"
-	   def v_path = "${v_workspace}"/testScripts/CT-readyapi-project.xml
+	   def v_path = "${v_workspace}/testScripts/CT-readyapi-project.xml"
 	   echo "PATH IS : ${v_path}"
       // Run the maven build
       if (isUnix()) {
