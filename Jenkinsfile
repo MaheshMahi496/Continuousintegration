@@ -59,12 +59,12 @@ node {
    stage('Function Test Cases execution') {
 	def v_workspace = "${env.WORKSPACE}"
 	   echo "Workspace is : ${v_workspace}"
-	   //def path = v_workspace
+	   def path = v_workspace/testScripts/CT-readyapi-project.xml
       // Run the maven build
       if (isUnix()) {
          SoapUIPro(environment: '', pathToProjectFile: '${env.WORKSPACE}/testScripts/CT-readyapi-project.xml', pathToTestrunner: 'C:/Program Files/SmartBear/ReadyAPI-2.7.0/bin/testrunner.bat', projectPassword: '', testCase: '', testSuite: '')        
       } else {
-	      SoapUIPro(environment: '', pathToProjectFile: '"${env.WORKSPACE}"/testScripts/CT-readyapi-project.xml', pathToTestrunner: 'C:/Program Files/SmartBear/ReadyAPI-2.7.0/bin/testrunner.bat', projectPassword: '', testCase: '', testSuite: '')
+	      SoapUIPro(environment: '', pathToProjectFile: path, pathToTestrunner: 'C:/Program Files/SmartBear/ReadyAPI-2.7.0/bin/testrunner.bat', projectPassword: '', testCase: '', testSuite: '')
          
       }
    }
