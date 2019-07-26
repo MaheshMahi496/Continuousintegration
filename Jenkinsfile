@@ -18,7 +18,7 @@ node {
 	  
    }
    stage('Clean') {
-      // Run the maven build
+      // Run the maven buildv
       if (isUnix()) {
          echo "This is linux box"
          sh 'mvn clean'
@@ -57,6 +57,9 @@ node {
       }
    }
    stage('Function Test Cases execution') {
+	def v_workspace = "${env.WORKSPACE}"
+	   echo "Workspace is : ${v_workspace}"
+	   //def path = v_workspace
       // Run the maven build
       if (isUnix()) {
          SoapUIPro(environment: '', pathToProjectFile: '${env.WORKSPACE}/testScripts/CT-readyapi-project.xml', pathToTestrunner: 'C:/Program Files/SmartBear/ReadyAPI-2.7.0/bin/testrunner.bat', projectPassword: '', testCase: '', testSuite: '')        
